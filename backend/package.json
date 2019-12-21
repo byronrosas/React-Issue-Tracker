@@ -1,0 +1,24 @@
+{
+  "name": "inventioissue",
+  "version": "1.0.0",
+  "description": "Inventio Issue",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server -e js,graphql server.js"
+  },
+  "keywords": [
+    "issue",
+    "inventio",
+    "app"
+  ],
+  "author": "Byron Rosas",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server-express": "^2.9.14",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^14.5.8",
+    "mongodb": "^3.4.1"
+  }
+}
