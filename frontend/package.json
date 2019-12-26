@@ -5,9 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "#start": "UI server. HMR is enabled in dev mode.", 
     "start": "nodemon -w uiserver.js -w .env uiserver.js",
-    "compile": "babel ./src --out-dir ./public/js",
-    "watch": "babel ./src --out-dir ./public/js --watch --verbose"
+    "lint": "eslint . --ext js,jsx --ignore-pattern public",
+    "#lint": "Runs ESLint on all relevant files", 
+    "compile": "webpack --mode production",
+    "#compile": "Generates JS bundles for production. Use with start.", 
+    "watch": "webpack --watch",
+    "#watch": "Compile, and recompile on any changes."
   },
   "keywords": [
     "issue",
@@ -17,15 +22,36 @@
   "author": "Byron Rosas",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "bootstrap": "^4.4.1",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "http-proxy-middleware": "^0.20.0",
-    "nodemon": "^1.18.9"
+    "nodemon": "^1.18.9",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.16",
+    "react-dom": "^16.12.0",
+    "react-router-bootstrap": "^0.25.0",
+    "react-router-dom": "^5.1.2",
+    "url-search-params": "^1.1.0",
+    "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
     "@babel/core": "^7.7.5",
     "@babel/preset-env": "^7.7.6",
-    "@babel/preset-react": "^7.7.4"
+    "@babel/preset-react": "^7.7.4",
+    "babel-eslint": "^10.0.3",
+    "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.17.0",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-middleware": "^3.7.2",
+    "webpack-hot-middleware": "^2.25.0"
   }
 }
